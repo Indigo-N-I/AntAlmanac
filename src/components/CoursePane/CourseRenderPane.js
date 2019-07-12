@@ -7,6 +7,15 @@ import MiniSectionTable from './MiniSectionTable';
 import NoNothing from './no_results.png';
 import AdAd from './ad_ad.png';
 
+/*
+  Ad is at bottom of the Render()
+
+  Need to make ad it's own class and pass link/picture
+
+  Insert function in CourseRenderPane to select ad
+
+*/
+
 const styles = (theme) => ({
   course: {
     ...theme.mixins.gutters(),
