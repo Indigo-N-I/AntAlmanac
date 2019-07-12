@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { Button } from '@material-ui/core';
 import PropTypes from 'prop-types';
-import Graph from './rechart';
+import Graph from './Graph';
 import querystring from 'querystring';
 
 const styles = () => ({
