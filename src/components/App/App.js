@@ -533,8 +533,21 @@ class App extends Component {
     let newCourses = [];
     oldClasses.forEach((oldClass) => {
       let newClass = Object.assign({}, oldClass);
-      newClass.scheduleIndex = moveTo;
-      newCourses.push(newClass);
+      //make sure do not overlap courses
+      let added = false;
+      this.state.courseEvents.some((addedEvent) => {
+        if (
+          (addedEvent.courseCode == newClass.courseCode) &
+          (addedEvent.scheduleIndex == moveTo)
+        ) {
+          added = true;
+          return true;
+        }
+      });
+      if (!added) {
+        newClass.scheduleIndex = moveTo;
+        newCourses.push(newClass);
+      }
     });
     return newCourses;
   };
